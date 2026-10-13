@@ -1,5 +1,7 @@
 # Flappy Window
 
+![Flappy Window preview](preview.gif)
+
 A minimal macOS Flappy Bird clone built with Python and AppKit.
 
 ## Requirements

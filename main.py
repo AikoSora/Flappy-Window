@@ -814,7 +814,7 @@ def main():
 
     # 2. Application
     app = NSApplication.sharedApplication()
-    app.setActivationPolicy_(1)     # accessory: без иконки в Dock
+    app.setActivationPolicy_(1)
 
     # 3. Game windows
     reset_pipe()
@@ -826,7 +826,8 @@ def main():
 
     # 4. Key interceptor
     if not install_key_interceptor(on_key, CAPTURED_KEYS):
-        print("⚠️  Продолжаю без перехвата клавиш — Space и Escape могут уйти другим приложениям.")
+        print("❌ Failed to install key interceptor. Exiting.")
+        sys.exit(1)
 
     # 5. Game 
     NSTimer.scheduledTimerWithTimeInterval_repeats_block_(TICK, True, tick)
